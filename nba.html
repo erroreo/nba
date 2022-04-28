@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.8/vue.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+<!-- <style>
+    @import url(style.css);
+</style> -->
+</head>
+<body>
+    <section id="app">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <div class="col-md-12">
+                    <h1>
+                        PTT NBA版
+                    </h1>
+                    <p class="lead">Node.js Vue.js JavaScript Bootstrap</p>
+                </div>
+            </div>
+        </div>
+        <div class="latest">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h3>最新消息</h3>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <table class="table" cellpadding="0" cellspacing="0" >
+            <thead>
+                <th>標題</th>
+                <th>作者</th>
+                <th>日期</th>
+            </thead>
+            <tbody>
+                <template v-for="item in pagedata">
+                    <tr v-for="items in item">
+                        <td width="500"><a :href="`https://www.ptt.cc${items.link}`">{{items.title}}</a></td>
+                        <td width="200">{{items.author}}</td>
+                        <td width="50" >{{items.date}}</td>
+                    </tr>
+                </template>
+            </tbody>     
+      </table>
+      <footer>
+        <div class="container">
+            <div class="col-md-4 text-left">
+                <h1>工具</h1>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Vue.js</li>
+                    <li>JavaScript</li>
+                    <li>Bootstrap</li>
+                </ul>
+            </div>
+        </div>
+      </footer>
+    </section>
+    <script text="javascript" src="page.js"></script>
+</body>
+</html>
+
+
